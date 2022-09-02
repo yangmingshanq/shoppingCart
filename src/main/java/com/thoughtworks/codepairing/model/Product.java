@@ -22,4 +22,17 @@ public class Product {
     public String getName() {
         return name;
     }
+
+    @Override
+    public int hashCode() {
+        return productCode.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || !(obj instanceof Product)) {
+            return false;
+        }
+        return this.productCode.equals(((Product) obj).productCode);
+    }
 }
